@@ -1,0 +1,333 @@
+.main
+  position: relative
+  padding: 62px 0
+  &__container
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+  &__content
+    display: flex
+    flex-direction: column
+
+.navigation
+  padding-top: 6px
+  width: max-content
+  position: relative
+  flex-shrink: 0
+  // margin-right: 96px
+  z-index: 5
+  &__list
+    list-style: none
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    padding: 0
+    margin: 0
+    background: $white
+    padding: 30px
+    margin-left: -30px
+    margin-top: -30px
+    &_next
+      position: absolute
+      top: -10px
+      left: 100%
+      transform: translateX(-100%)
+      opacity: 0
+      z-index: -1
+      box-shadow: 0px 0px 20px rgba(148, 148, 148, 0.25)
+      transition: z-index .3s step-end, transform .3s linear
+      padding: 10px
+      margin: 0
+      &_active
+        opacity: 1
+        transform: translateX(0)
+  &__item
+    font-size: 18px
+    font-weight: bold
+    position: relative
+    color: $black
+    &:not(:last-child)
+      margin-bottom: 75px
+      background: $white
+    &_active
+      color: $blue
+  &__link
+    text-decoration: none
+    color: inherit
+  &__menu
+    display: none
+    cursor: pointer
+  &__submenu
+    position: relative
+    display: flex
+    align-items: center
+  &__button
+    margin-left: 5px
+    padding: 5px
+    width: 22px
+    height: 22px
+    display: flex
+    align-items: center
+    justify-content: center
+    border: none
+    background: transparent
+    transition: .3s
+    &_active
+      transform: rotate(180deg)
+  &__icon
+    width: 100%
+    height: 100%
+    object-fit: contain
+.goods
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  column-gap: 42px
+  row-gap: 50px
+  width: 900px
+
+.good
+  display: grid
+  grid-template-columns: repeat(2, 205px)
+  gap: 17px
+  max-width: 429px
+  &__image
+    position: relative
+  &-image
+    width: 100%
+    object-fit: contain
+  &__descriptions
+    display: flex
+    flex-direction: column
+    line-height: 183%
+  &__title
+    font-size: 14px
+    font-weight: bold
+    margin: 0
+  &__option
+    margin: 0
+    &-title
+      font-weight: bold
+.popup
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  opacity: 0
+  transition: opacity .3s
+  &:hover
+    visibility: visible
+    opacity: 1
+  &__title
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    background: $black
+    color: $white
+    border: none
+    transition: .3s
+    &:hover
+      color: $blue
+  &__button
+    cursor: pointer
+    position: absolute
+    right: 0
+    bottom: 0
+    left: 0
+    height: 104px
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    font-size: 18px
+    background-color: #0f0f0f
+    color: $white
+    border: none
+    transition: .3s
+    &:hover
+      color: $blue
+  &__price
+    color: #EB5757
+
+.button
+  font-size: 18px
+  padding: 22px 44px
+  color: $white
+  background-color: $dark-blue
+  border: none
+
+.modal
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  visibility: hidden
+  opacity: 0
+  transition: opacity .3s
+  z-index: 120
+  &_visible
+    visibility: visible
+    opacity: 1
+  &__overlay
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: #bdbdbd55
+  &__form
+    position: fixed
+    top: 45%
+    left: 50%
+    transform: translate(-50%, -50%)
+  &__close
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    position: absolute
+    top: 5px
+    right: 5px
+    width: 30px
+    height: 30px
+    background-color: $white
+    cursor: pointer
+    &-line
+      position: relative
+      display: block
+      width: 25px
+      height: 2px
+      background-color: $white
+      &::before
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        content: ''
+        display: block
+        width: 25px
+        height: 2px
+        background-color: $black
+        transition: .5s
+        transform: rotate(45deg)
+      &::after
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        content: ''
+        display: block
+        width: 25px
+        height: 2px
+        background-color: $black
+        transition: .5s
+        transform: rotate(-45deg)
+
+.form
+  position: relative
+  display: flex
+  flex-direction: column
+  width: 735px
+  padding: 88px 115px 40px
+  background-color: $white
+  box-shadow: 0px 0px 20px rgba(148, 148, 148, 0.25)
+  &__input
+    width: 100%
+    padding: 10px 15px
+    background-color: #D2D2D2
+    border: none
+    margin-bottom: 22px
+    &:nth-child(3)
+      margin-bottom: 42px
+
+    &::placeholder
+      color: #5F5F5F
+      font-size: 18px
+      font-weight: 300
+  &__button
+    align-self: flex-end
+    padding: 16px 32px
+
+.input-group
+  position: relative
+
+label.error
+  position: absolute
+  background-color: $red
+  top: -22px
+  left: 5px
+  right: 5px
+  padding: 2px
+  z-index: 150
+  font-size: 14px
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    bottom: -8px
+    width: 0
+    height: 0
+    border-left: 16px solid $red
+    border-top: 10px solid transparent
+    border-bottom: 10px solid transparent
+    z-index: -1
+
+.index-title
+  grid-column: span 2
+
+.modal-ok
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  visibility: hidden
+  opacity: 0
+  transition: opacity .3s
+  z-index: 120
+  &_visible
+    visibility: visible
+    opacity: 1
+  &__overlay
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-color: #bdbdbd55
+  &__wrapper
+    position: fixed
+    top: 45%
+    left: 50%
+    transform: translate(-50%, -50%)
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 735px
+    padding: 88px 115px 40px
+    background-color: $white
+    box-shadow: 0px 0px 20px rgba(148, 148, 148, 0.25)
+  &__title
+    font-size: 18px
+    font-weight: 300
+    text-align: center
+    line-height: 183%
+    color: $black
+    margin-bottom: 0
+  &__text
+    font-size: 14px
+    line-height: 183%
+    font-weight: normal
+    color: $grey
+    text-align: center
+    margin-bottom: 40px

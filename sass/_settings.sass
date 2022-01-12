@@ -1,0 +1,61 @@
+*
+  box-sizing: border-box
+  outline: none
+
+@font-face
+  font-family: 'Gotham Pro'
+  src: url('../fonts/GothamPro.woff2') format('woff2'), url('../fonts/GothamPro.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+  font-display: swap
+
+  &
+    font-family: 'Gotham Pro'
+    src: url('../fonts/GothamPro-Bold.woff2') format('woff2'), url('../fonts/GothamPro-Bold.woff') format('woff')
+    font-weight: bold
+    font-style: normal
+    font-display: swap
+
+  &
+    font-family: 'Gotham Pro'
+    src: url('../fonts/GothamPro-Medium.woff2') format('woff2'), url('../fonts/GothamPro-Medium.woff') format('woff')
+    font-weight: 500
+    font-style: normal
+    font-display: swap
+
+  &
+    font-family: 'Gotham Pro'
+    src: url('../fonts/GothamPro-Light.woff2') format('woff2'), url('../fonts/GothamPro-Light.woff') format('woff')
+    font-weight: 300
+    font-style: normal
+    font-display: swap
+
+body
+  font-family: 'Gotham Pro', sans-serif
+  font-size: 14px
+  font-weight: normal
+  color: $black
+
+a, button, .button
+  cursor: pointer
+
+.container
+  max-width: 1217px
+  width: 90%
+  margin: auto
+
+.title
+  font-size: 18px
+  text-transform: uppercase
+  font-weight: bold
+  margin-top: 0
+  margin-bottom: 50px
+  &-h3
+    font-size: 18px
+    margin-bottom: 0
+
+.subtitle
+  font-size: 18px
+  font-weight: bold
+  margin-top: 0
+  margin-bottom: 50px
